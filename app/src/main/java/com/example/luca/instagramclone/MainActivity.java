@@ -1,21 +1,11 @@
 package com.example.luca.instagramclone;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Build;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
+import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -29,19 +19,13 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity implements View.OnKeyListener, View.OnClickListener {
-
-    private String INFO_TAG = "_Info.MainActivity";
-    private String ERROR_TAG = "_Info.MainActivity:ERROR";
 
     EditText userEditText;
     EditText passwEditText;
-
     boolean loginEnabled = true;
-
-
+    private String INFO_TAG = "_Info.MainActivity";
+    private String ERROR_TAG = "_Info.MainActivity:ERROR";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
