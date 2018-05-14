@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         // check whether already logged in
         ParseUser currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
@@ -51,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         logo.setOnClickListener(this);
 
     }
-
-
 
 
     public void signUp() {
@@ -98,8 +97,6 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
         }
 
     }
-
-
 
 
     public void logIn() {
@@ -164,10 +161,6 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
     }
 
 
-
-
-
-
     public void textViewClick(View view) {
 
         toggleLogInSignUp();
@@ -201,9 +194,6 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
     }
 
 
-
-
-
     @Override
     public void onClick(View v) {
 
@@ -214,6 +204,19 @@ public class MainActivity extends AppCompatActivity implements View.OnKeyListene
 
     private void hideKeyboard() {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+
+
+        if (getCurrentFocus() != null) {
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        userEditText.setText("");
+        passwEditText.setText("");
     }
 }
