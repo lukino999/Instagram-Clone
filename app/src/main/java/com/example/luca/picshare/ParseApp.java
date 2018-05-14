@@ -1,4 +1,4 @@
-package com.example.luca.instagramclone;
+package com.example.luca.picshare;
 
 import com.parse.Parse;
 import android.app.Application;

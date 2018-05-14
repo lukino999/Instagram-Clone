@@ -1,4 +1,4 @@
-package com.example.luca.instagramclone;
+package com.example.luca.picshare;
 
 import android.Manifest;
 import android.content.Intent;
@@ -124,26 +124,21 @@ public class UsersListActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        /*
-        if (item.getItemId() == R.id.share) {
-            if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                pickPhoto();
-            } else if (Build.VERSION.SDK_INT >= 23) {
-                requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE_REQUEST);
-            }
-        }
-        */
-
         switch (item.getItemId()) {
             case R.id.share:
+                Log.i(INFO_TAG, "case R.id.share:");
                 // check for READ_EXTERNAL_STORAGE permission
-                if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    pickPhoto();
-                } else if (Build.VERSION.SDK_INT >= 23) {
+                if (Build.VERSION.SDK_INT >= 23 &&
+                        checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE_REQUEST);
+                    break;
+                } else {
+                    pickPhoto();
+                    break;
                 }
 
             case R.id.logout:
+                Log.i(INFO_TAG, "case R.id.logout:");
                 ParseUser.logOutInBackground(new LogOutCallback() {
                     @Override
                     public void done(ParseException e) {

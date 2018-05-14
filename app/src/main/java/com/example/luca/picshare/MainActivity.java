@@ -1,4 +1,4 @@
-package com.example.luca.instagramclone;
+package com.example.luca.picshare;
 
 import android.content.Intent;
 import android.os.Bundle;

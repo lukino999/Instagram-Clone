@@ -1,4 +1,4 @@
-package com.example.luca.instagramclone;
+package com.example.luca.picshare;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -80,6 +80,8 @@ public class FeedActivity extends AppCompatActivity {
                                             ));
 
                                             imageView.setPadding(0, 10, 0, 0);
+
+                                            imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
                                             imageView.setImageBitmap(bitmap);
 

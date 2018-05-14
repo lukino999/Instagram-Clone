@@ -1,4 +1,4 @@
-package com.example.luca.instagramclone;
+package com.example.luca.picshare;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
