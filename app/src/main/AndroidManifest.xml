@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.luca.picshare.UsersListActivity" />
-        <activity android:name="com.example.luca.picshare.FeedActivity"></activity>
+        <activity android:name="com.example.luca.picshare.ViewPicturesActivity"></activity>
     </application>
 
 </manifest>

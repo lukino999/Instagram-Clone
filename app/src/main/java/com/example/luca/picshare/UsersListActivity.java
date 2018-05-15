@@ -87,14 +87,14 @@ public class UsersListActivity extends AppCompatActivity {
                             ListView listView = findViewById(R.id.listView);
                             listView.setAdapter(adapter);
 
-                            // call FeedActivity
+                            // call ViewPicturesActivity
                             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                 @Override
                                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                                     TextView userTextView = (TextView) view;
 
                                     String username = userTextView.getText().toString();
-                                    Intent intent = new Intent(getApplicationContext(), FeedActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), ViewPicturesActivity.class);
                                     intent.putExtra(Const.USERNAME_FIELD, username);
                                     startActivity(intent);
                                 }
